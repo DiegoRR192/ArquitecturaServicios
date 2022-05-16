@@ -32,10 +32,10 @@ export class TutoresComponent implements OnInit {
       this.service.eliminar(tutores.id).subscribe(
         () => {
           this.calcularRangos();
-          Swal.fire('Eliminar Cliente', `Fue ${tutores.nombreTutor} eliminado  con éxito..`);
+          Swal.fire('Eliminar Tutor', `Fue ${tutores.nombreTutor} eliminado  con éxito..`);
         },
         () => {
-          Swal.fire('Eliminar Cliente', 'No se pudo eliminar al cliente, intente mas tarde...');
+          Swal.fire('Eliminar Tutor', 'No se pudo eliminar al tutor, intente mas tarde...');
         }
       );
     }

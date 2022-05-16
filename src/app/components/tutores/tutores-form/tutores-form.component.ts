@@ -26,7 +26,7 @@ export class TutoresFormComponent implements OnInit {
     this.service.crear(this.tutores).subscribe(
       (tutores: { nombreTutor: any; }) => {
         Swal.fire('Crear Cliente',`Cliente ${tutores.nombreTutor} fue creado con éxito...`);
-        this.router.navigate(['/clientes']);
+        this.router.navigate(['/tutores']);
       },
       (err: { status: number; error: any; }) => {
         if (err.status === 400) {
@@ -49,7 +49,7 @@ export class TutoresFormComponent implements OnInit {
     this.service.modificar(this.tutores).subscribe(
       (tutores: { nombreTutor: any; }) => {
         Swal.fire('Modificar Cliente',`Cliente ${tutores.nombreTutor} fue modificado con éxito...`);
-        this.router.navigate(['/clientes']);
+        this.router.navigate(['/tutores']);
       },
       (err: { status: number; error: any; }) => {
         if (err.status === 400) {

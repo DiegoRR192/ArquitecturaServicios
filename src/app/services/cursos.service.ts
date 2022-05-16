@@ -7,7 +7,7 @@ import { Cursos } from '../models/cursos';
 @Injectable({
   providedIn: 'root',
 })
-export class ClienteService {
+export class CursoService {
   private urlEndPoint: string = 'http://localhost:8090/api/cursos';
 
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });

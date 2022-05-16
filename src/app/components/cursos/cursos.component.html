@@ -4,20 +4,23 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Identificación</th>
             <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Correo</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let curso of lista">
             <td>{{curso.id}}</td>
-           
+            <td>{{curso.nombre}}</td>
+            <td>{{curso.descripcion}}</td>
+            <td>{{curso.valor}}</td>
+            <td>{{curso.estado}}</td>
             <td>
                 <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
-                    [routerLink]="['/clientes/form', curso.id]">
+                    [routerLink]="['/cursos/form', curso.id]">
                     <fa-icon [icon]="faEdit"></fa-icon>
                 </button>
                 <button class="btn btn-secondary btn-sm" (click)="eliminar(curso)">
