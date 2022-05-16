@@ -1,0 +1,41 @@
+<h2>{{titulo}}</h2>
+<div class="card-body text-primary">
+    <button class="btn btn-primary my-2" routerLink="/clientes">Regresar</button>
+    <br />
+    <form>
+        <div class="form-group">
+            <label for="identificacion">Identificación</label>
+            <input id="identificacion" class="form-control" type="text" name="identificacion"
+                [(ngModel)]="cliente.identificacion">
+            <div class="alert alert-danger" *ngIf="error && error.identificacion">
+                {{error.identificacion}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="cliente.nombre">
+            <div class="alert alert-danger" *ngIf="error && error.nombre">
+                {{error.nombre}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input id="correo" class="form-control" type="text" name="correo" [(ngModel)]="cliente.correo">
+            <div class="alert alert-danger" *ngIf="error && error.correo">
+                {{error.correo}}
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" class="form-control" type="text" name="direccion" [(ngModel)]="cliente.direccion">
+            <div class="alert alert-danger" *ngIf="error && error.direccion">
+                {{error.direccion}}
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="cliente.id ? modificar() : crear()">
+                {{cliente.id ? 'Modificar Cliente' : 'Crear Cliente'}}
+            </button>
+        </div>
+    </form>
+</div>
