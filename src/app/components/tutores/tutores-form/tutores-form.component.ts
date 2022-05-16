@@ -20,7 +20,9 @@ export class TutoresFormComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.editar();
+  }
 
   crear() {
     this.service.crear(this.tutores).subscribe(
