@@ -42,7 +42,6 @@ export class TutoresService {
 
   listarPagina(page: string, size: string): Observable<any> {
     const params = new HttpParams().set('page', page).set('size', size);
-    console.log(params);
     return this.http.get<any>(this.urlEndPoint, { params: params });
   }
 }

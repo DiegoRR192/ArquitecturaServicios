@@ -8,10 +8,9 @@ import { PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-tutores',
   templateUrl: './tutores.component.html',
-  styleUrls: ['./tutores.component.css']
+  styleUrls: ['./tutores.component.css'],
 })
 export class TutoresComponent implements OnInit {
-
   titulo: string = 'Tutores';
   lista: Tutores[] = [];
   faEdit = faPencil;
@@ -21,7 +20,7 @@ export class TutoresComponent implements OnInit {
   paginaActual = 0;
   pageSizeOption = [5, 10, 25, 50, 100];
 
-  constructor(private service: TutoresService) { }
+  constructor(private service: TutoresService) {}
 
   ngOnInit(): void {
     this.calcularRangos();
@@ -32,17 +31,24 @@ export class TutoresComponent implements OnInit {
       this.service.eliminar(tutores.id).subscribe(
         () => {
           this.calcularRangos();
-          Swal.fire('Eliminar Tutor', `Fue ${tutores.nombreTutor} eliminado  con éxito..`);
+          Swal.fire(
+            'Eliminar Tutor',
+            `Fue ${tutores.nombreTutor} eliminado  con éxito..`
+          );
         },
         () => {
-          Swal.fire('Eliminar Tutor', 'No se pudo eliminar al tutor, intente mas tarde...');
+          Swal.fire(
+            'Eliminar Tutor',
+            'No se pudo eliminar al tutor, intente mas tarde...'
+          );
         }
       );
     }
   }
 
   private calcularRangos() {
-    this.service.listarPagina(this.paginaActual.toString(), this.totalPagina.toString()).subscribe((p) => { this.lista = p.content as Tutores[]; this.totalRegistros = p.totalElements as number; console.log(this.lista) });
+    this.service.listar().subscribe((data) => (this.lista = data));
+    // this.service.listarPagina(this.paginaActual.toString(), this.totalPagina.toString()).subscribe((p) => { this.lista = p.content as Tutores[]; this.totalRegistros = p.totalElements as number; console.log(this.lista) });
   }
 
   paginar(event: PageEvent): void {
@@ -50,5 +56,4 @@ export class TutoresComponent implements OnInit {
     this.totalPagina = event.pageSize;
     this.calcularRangos();
   }
-
 }
