@@ -4,6 +4,7 @@ import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import { TutoresService } from 'src/app/services/tutores.service';
 import { PageEvent } from '@angular/material/paginator';
+import { CursoService } from 'src/app/services/cursos.service';
 
 @Component({
   selector: 'app-cursos',
@@ -20,20 +21,21 @@ export class CursosComponent implements OnInit {
   paginaActual = 0;
   pageSizeOption = [5, 10, 25, 50, 100];
 
-  constructor(private service: TutoresService) {}
+  constructor(private service: CursoService) {}
 
   ngOnInit(): void {
     this.calcularRangos();
   }
 
   private calcularRangos() {
-    this.service
+    /* this.service
       .listarPagina(this.paginaActual.toString(), this.totalPagina.toString())
       .subscribe((p) => {
         this.lista = p.content as Cursos[];
         this.totalRegistros = p.totalElements as number;
         console.log(this.lista);
-      });
+      }); */
+    this.service.listar().subscribe((data) => (this.lista = data));
   }
 
   eliminar(curso: Cursos): void {
