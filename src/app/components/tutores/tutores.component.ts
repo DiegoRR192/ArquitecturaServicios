@@ -47,7 +47,6 @@ export class TutoresComponent implements OnInit {
   }
 
   private calcularRangos() {
-    //this.service.listar().subscribe((data) => (this.lista = data));
     this.service
       .listarPagina(this.paginaActual.toString(), this.totalPagina.toString())
       .subscribe((p) => {

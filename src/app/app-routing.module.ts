@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClienteFormComponent } from './components/clientes/cliente-form.component';
-import { ClientesComponent } from './components/clientes/clientes.component';
 import { CursosFormComponent } from './components/cursos/cursos-form/cursos-form.component';
 import { CursosComponent } from './components/cursos/cursos.component';
+import { EmpresasFormComponent } from './components/empresas/empresas-form/empresas-form.component';
+import { EmpresasComponent } from './components/empresas/empresas.component';
 import { HomeComponent } from './components/home/home.component';
+import { ParticipantesFormComponent } from './components/participantes/participantes-form/participantes-form.component';
+import { ParticipantesComponent } from './components/participantes/participantes.component';
 import { TutoresFormComponent } from './components/tutores/tutores-form/tutores-form.component';
 import { TutoresComponent } from './components/tutores/tutores.component';
 
@@ -14,9 +16,12 @@ const routes: Routes = [
   { path: 'tutores', component: TutoresComponent },
   { path: 'tutores/form', component: TutoresFormComponent },
   { path: 'tutores/form/:id', component: TutoresFormComponent },
-  { path: 'empresas', component: ClientesComponent },
-  { path: 'empresas/form', component: ClienteFormComponent },
-  { path: 'empresas/form/:id', component: ClienteFormComponent },
+  { path: 'empresas', component: EmpresasComponent },
+  { path: 'empresas/form', component: EmpresasFormComponent },
+  { path: 'empresas/form/:id', component: EmpresasFormComponent },
+  { path: 'participantes', component: ParticipantesComponent },
+  { path: 'participantes/form', component: ParticipantesFormComponent },
+  { path: 'participantes/form/:id', component: ParticipantesFormComponent },
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/form', component: CursosFormComponent },
   { path: 'cursos/form/:id', component: CursosFormComponent },

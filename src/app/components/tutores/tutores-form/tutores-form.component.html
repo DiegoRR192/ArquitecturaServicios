@@ -8,21 +8,21 @@
             <input id="identificacion" class="form-control" type="text" name="identificacion"
                 [(ngModel)]="tutores.identificacionTutor">
             <div class="alert alert-danger" *ngIf="error && error.identificacionTutor">
-                {{error.identificacion}}
+                {{error.identificacionTutor}}
             </div>
         </div>
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="tutores.nombreTutor">
             <div class="alert alert-danger" *ngIf="error && error.nombreTutor">
-                {{error.nombre}}
+                {{error.nombreTutor}}
             </div>
         </div>
         <div style="margin-bottom: 32px;" class="form-group">
             <label for="codigo">Codigo</label>
             <input id="codigo" class="form-control" type="text" name="codigo" [(ngModel)]="tutores.codigoTutor">
             <div class="alert alert-danger" *ngIf="error && error.codigoTutor">
-                {{error.correo}}
+                {{error.codigoTutor}}
             </div>
         </div>
         <div>

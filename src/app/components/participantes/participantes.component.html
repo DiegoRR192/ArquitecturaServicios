@@ -1,29 +1,30 @@
 <h2>{{titulo}}</h2>
-<button class="btn btn-primary my-2" routerLink="/clientes/form">Agregar</button>
+<button class="btn btn-primary my-2" routerLink="/participantes/form">Agregar</button>
 <table class="table table-hover table-striper">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Identificación</th>
             <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Correo</th>
-            <th>Acciones</th>
+            <th>Código</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+            <th>Empresa</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cliente of lista">
-            <td>{{cliente.id}}</td>
-            <td>{{cliente.identificacion}}</td>
-            <td>{{cliente.nombre}}</td>
-            <td>{{cliente.direccion}}</td>
-            <td>{{cliente.correo}}</td>
+        <tr *ngFor="let participante of lista">
+            <td>{{participante.id}}</td>
+            <td>{{participante.nombre}}</td>
+            <td>{{participante.codigoParticipante}}</td>
+            <td>{{participante.telefono}}</td>
+            <td>{{participante.estado}}</td>
+            <td>{{participante.empresa.nombreEmpresa}}</td>
             <td>
                 <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
-                    [routerLink]="['/clientes/form', cliente.id]">
+                    [routerLink]="['/participantes/form', participante.id]">
                     <fa-icon [icon]="faEdit"></fa-icon>
                 </button>
-                <button class="btn btn-secondary btn-sm" (click)="eliminar(cliente)">
+                <button class="btn btn-secondary btn-sm" (click)="eliminar(participante)">
                     <fa-icon [icon]="faDelete"></fa-icon>
                 </button>
             </td>

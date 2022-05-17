@@ -1,1 +1,40 @@
-<p>empresas works!</p>
+<h2>{{titulo}}</h2>
+<button class="btn btn-primary my-2" routerLink="/empresas/form">Agregar</button>
+<table class="table table-hover table-striper">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Dirección</th>
+            <th>Correo</th>
+            <th>Participantes</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empresa of lista">
+            <td>{{empresa.id}}</td>
+            <td>{{empresa.codigoEmpresa}}</td>
+            <td>{{empresa.nombreEmpresa}}</td>
+            <td>{{empresa.telefonoEmpresa}}</td>
+            <td>{{empresa.dirEmpresa}}</td>
+            <td>{{empresa.correoEmpresa}}</td>
+            <td>{{empresa.participantes.length}}</td>
+            <td>
+                <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
+                    [routerLink]="['/empresas/form', empresa.id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button class="btn btn-secondary btn-sm" (click)="eliminar(empresa)">
+                    <fa-icon [icon]="faDelete"></fa-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
+    [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
+    class="float-left mx-2"
+</mat-paginator>

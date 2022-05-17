@@ -1,35 +1,35 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cursos } from '../models/cursos';
+import { Participante } from '../models/participante';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CursoService {
-  private urlEndPoint: string = 'http://localhost:8090/api/cursos';
+export class ParticipanteService {
+  private urlEndPoint: string = 'http://localhost:8090/api/empresas';
   
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Cursos[]> {
-    return this.http.get<Cursos[]>(this.urlEndPoint);
+  listar(): Observable<Participante[]> {
+    return this.http.get<Participante[]>(this.urlEndPoint);
   }
 
-  crear(curso: Cursos): Observable<Cursos> {
-    return this.http.post<Cursos>(this.urlEndPoint, curso, {
+  crear(participante: Participante): Observable<Participante> {
+    return this.http.post<Participante>(this.urlEndPoint, participante, {
       headers: this.httpHeaders,
     });
   }
 
-  ver(id: number): Observable<Cursos> {
-    return this.http.get<Cursos>(`${this.urlEndPoint}/${id}`);
+  ver(id: number): Observable<Participante> {
+    return this.http.get<Participante>(`${this.urlEndPoint}/${id}`);
   }
 
-  modificar(curso: Cursos): Observable<Cursos> {
-    return this.http.put<Cursos>(
-      `${this.urlEndPoint}/${curso.id}`,
-      curso,
+  modificar(participante: Participante): Observable<Participante> {
+    return this.http.put<Participante>(
+      `${this.urlEndPoint}/${participante.id}`,
+      participante,
       {
         headers: this.httpHeaders,
       }
