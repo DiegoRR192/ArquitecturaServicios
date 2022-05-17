@@ -28,14 +28,14 @@ export class CursosComponent implements OnInit {
   }
 
   private calcularRangos() {
-    /* this.service
+    this.service
       .listarPagina(this.paginaActual.toString(), this.totalPagina.toString())
       .subscribe((p) => {
         this.lista = p.content as Cursos[];
         this.totalRegistros = p.totalElements as number;
         console.log(this.lista);
-      }); */
-    this.service.listar().subscribe((data) => (this.lista = data));
+      });
+//    this.service.listar().subscribe((data) => (this.lista = data));
   }
 
   eliminar(curso: Cursos): void {

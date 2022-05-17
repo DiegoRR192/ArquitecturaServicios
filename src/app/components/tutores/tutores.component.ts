@@ -47,8 +47,14 @@ export class TutoresComponent implements OnInit {
   }
 
   private calcularRangos() {
-    this.service.listar().subscribe((data) => (this.lista = data));
-    // this.service.listarPagina(this.paginaActual.toString(), this.totalPagina.toString()).subscribe((p) => { this.lista = p.content as Tutores[]; this.totalRegistros = p.totalElements as number; console.log(this.lista) });
+    //this.service.listar().subscribe((data) => (this.lista = data));
+    this.service
+      .listarPagina(this.paginaActual.toString(), this.totalPagina.toString())
+      .subscribe((p) => {
+        this.lista = p.content as Tutores[];
+        this.totalRegistros = p.totalElements as number;
+        console.log(this.lista);
+      });
   }
 
   paginar(event: PageEvent): void {

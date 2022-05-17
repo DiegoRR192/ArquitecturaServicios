@@ -8,7 +8,7 @@ import { Tutores } from '../models/tutores';
 })
 export class TutoresService {
   private urlEndPoint: string = 'http://localhost:8090/api/tutores';
-
+  
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) {}
 
@@ -42,6 +42,6 @@ export class TutoresService {
 
   listarPagina(page: string, size: string): Observable<any> {
     const params = new HttpParams().set('page', page).set('size', size);
-    return this.http.get<any>(this.urlEndPoint, { params: params });
+    return this.http.get<any>(`${this.urlEndPoint}/pagina`, { params: params });
   }
 }
