@@ -8,9 +8,9 @@ import { Cursos } from '../models/cursos';
 })
 export class CursoService {
   private urlEndPoint: string = 'http://localhost:8090/api/cursos';
-  
+
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   listar(): Observable<Cursos[]> {
     return this.http.get<Cursos[]>(this.urlEndPoint);

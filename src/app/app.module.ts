@@ -19,6 +19,8 @@ import { EmpresasFormComponent } from './components/empresas/empresas-form/empre
 import { ParticipantesComponent } from './components/participantes/participantes.component';
 import { ParticipantesFormComponent } from './components/participantes/participantes-form/participantes-form.component';
 import { MatSelectModule } from '@angular/material/select';
+import { GruposComponent } from './components/grupos/grupos.component';
+import { GruposFormComponent } from './components/grupos/grupos-form/grupos-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
     EmpresasFormComponent,
     ParticipantesComponent,
     ParticipantesFormComponent,
+    GruposComponent,
+    GruposFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,65 @@
+<h2>{{titulo}}</h2>
+<div class="card-body text-primary">
+    <button class="btn btn-primary my-2" routerLink="/Grupo">Regresar</button>
+    <br />
+    <form>
+        <div class="form-group">
+            <label for="nombreGrupo">Nombre Grupo</label>
+            <input id="nombreGrupo" class="form-control" type="text" name="nombreGrupo" [(ngModel)]="grupos.nombreGrupo">
+            <div class="alert alert-danger" *ngIf="error && error.nombreGrupo">
+                {{error.nombreGrupo}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado</label>
+            <input id="estado" class="form-control" placeholder="true / false" type="text" name="estado" [(ngModel)]="grupos.estado">
+            <div class="alert alert-danger" *ngIf="error && error.estado">
+                {{error.estado}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fechaInicio">Fecha Inicio</label>
+            <input id="fechaInicio" class="form-control" placeholder="dd/mm/aaaa" type="datetime" name="fechaInicio" [(ngModel)]="grupos.fechaInicio">
+            <div class="alert alert-danger" *ngIf="error && error.fechaInicio">
+                {{error.fechaInicio}}
+            </div>
+        </div>
+        <div style="margin-bottom: 16px;" class="form-group">
+            <label for="fechaFin">Fecha Fin</label>
+            <input id="fechaFin" class="form-control" placeholder="dd/mm/aaaa" type="datetime" name="fechaFin" [(ngModel)]="grupos.fechaFin">
+            <div class="alert alert-danger" *ngIf="error && error.fechaFin">
+                {{error.fechaFin}}
+            </div>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Tutor</mat-label>
+            <mat-select [(value)]="tutor">
+                <mat-optgroup *ngFor="let tutor of tutores">
+                    <mat-option [value]="tutor">{{tutor.nombreTutor}}</mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Empresa</mat-label>
+            <mat-select [(value)]="empresa">
+                <mat-optgroup *ngFor="let empresa of empresas">
+                    <mat-option [value]="empresa">{{empresa.nombreEmpresa}}</mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Curso</mat-label>
+            <mat-select [(value)]="curso">
+                <mat-optgroup *ngFor="let curso of cursos">
+                    <mat-option [value]="curso">{{curso.nombre}}</mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="grupos.id ? modificar() : crear()">
+                {{grupos.id ? 'Modificar Grupo' : 'Crear Grupo'}}
+            </button>
+        </div>
+    </form>
+</div>

@@ -67,6 +67,7 @@ export class ParticipantesFormComponent implements OnInit {
   }
 
   modificar() {
+    this.participantes.empresa=this.empresa
     this.service.modificar(this.participantes).subscribe(
       (participantes: { nombre: any }) => {
         Swal.fire(

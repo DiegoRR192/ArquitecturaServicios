@@ -7,7 +7,7 @@ import { Participante } from '../models/participante';
   providedIn: 'root',
 })
 export class ParticipanteService {
-  private urlEndPoint: string = 'http://localhost:8090/api/empresas';
+  private urlEndPoint: string = 'http://localhost:8090/api/participantes';
   
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) {}
