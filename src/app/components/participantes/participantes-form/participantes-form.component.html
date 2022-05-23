@@ -1,51 +1,55 @@
-<h2>{{titulo}}</h2>
-<div class="card-body text-primary">
-    <button class="btn btn-primary my-2" routerLink="/participantes">Regresar</button>
-    <br />
-    <form>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="participantes.nombre">
-            <div class="alert alert-danger" *ngIf="error && error.nombre">
-                {{error.nombre}}
+<app-navbar></app-navbar>
+<section class="container body-content">
+    <h2>{{titulo}}</h2>
+    <div class="card-body text-primary">
+        <button class="btn btn-primary my-2" routerLink="/empleados">Regresar</button>
+        <br />
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="participantes.nombre">
+                <div class="alert alert-danger" *ngIf="error && error.nombre">
+                    {{error.nombre}}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="codigoParticipante">Codigo</label>
-            <input id="codigoParticipante" class="form-control" type="text" name="codigoParticipante"
-                [(ngModel)]="participantes.codigoParticipante">
-            <div class="alert alert-danger" *ngIf="error && error.codigoParticipante">
-                {{error.codigoParticipante}}
+            <div class="form-group">
+                <label for="codigoParticipante">Codigo</label>
+                <input id="codigoParticipante" class="form-control" type="text" name="codigoParticipante"
+                    [(ngModel)]="participantes.codigoParticipante">
+                <div class="alert alert-danger" *ngIf="error && error.codigoParticipante">
+                    {{error.codigoParticipante}}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Telefono</label>
-            <input id="telefono" class="form-control" type="number" name="telefono"
-                [(ngModel)]="participantes.telefono">
-            <div class="alert alert-danger" *ngIf="error && error.telefono">
-                {{error.telefono}}
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input id="telefono" class="form-control" type="number" name="telefono"
+                    [(ngModel)]="participantes.telefono">
+                <div class="alert alert-danger" *ngIf="error && error.telefono">
+                    {{error.telefono}}
+                </div>
             </div>
-        </div>
-        <div style="margin-bottom: 16px;" class="form-group">
-            <label for="estado">Estado</label>
-            <input id="estado" class="form-control" placeholder="true / false" type="text" name="estado"
-                [(ngModel)]="participantes.estado">
-            <div class="alert alert-danger" *ngIf="error && error.estado">
-                {{error.estado}}
+            <div style="margin-bottom: 16px;" class="form-group">
+                <label for="estado">Estado</label>
+                <input id="estado" class="form-control" placeholder="true / false" type="text" name="estado"
+                    [(ngModel)]="participantes.estado">
+                <div class="alert alert-danger" *ngIf="error && error.estado">
+                    {{error.estado}}
+                </div>
             </div>
-        </div>
-        <mat-form-field appearance="fill">
-            <mat-label>Empresa</mat-label>
-            <mat-select [(value)]="empresa">
-                <mat-optgroup *ngFor="let empresa of empresas">
-                    <mat-option [value]="empresa">{{empresa.nombreEmpresa}}</mat-option>
-                </mat-optgroup>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button type="button" class="btn btn-primary" (click)="participantes.id ? modificar() : crear()">
-                {{participantes.id ? 'Modificar Participante' : 'Crear Participante'}}
-            </button>
-        </div>
-    </form>
-</div>
+            <mat-form-field appearance="fill">
+                <mat-label>Empresa</mat-label>
+                <mat-select [(value)]="empresa">
+                    <mat-optgroup *ngFor="let empresa of empresas">
+                        <mat-option [value]="empresa">{{empresa.nombreEmpresa}}</mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="participantes.id ? modificar() : crear()">
+                    {{participantes.id ? 'Modificar Participante' : 'Crear Participante'}}
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<app-footer></app-footer>

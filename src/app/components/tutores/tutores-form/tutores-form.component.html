@@ -1,34 +1,38 @@
-<h2>{{titulo}}</h2>
-<div class="card-body text-primary">
-    <button class="btn btn-primary my-2" routerLink="/tutores">Regresar</button>
-    <br />
-    <form>
-        <div class="form-group">
-            <label for="identificacion">Identificación</label>
-            <input id="identificacion" class="form-control" type="text" name="identificacion"
-                [(ngModel)]="tutores.identificacionTutor">
-            <div class="alert alert-danger" *ngIf="error && error.identificacionTutor">
-                {{error.identificacionTutor}}
+<app-navbar></app-navbar>
+<section class="container body-content">
+    <h2>{{titulo}}</h2>
+    <div class="card-body text-primary">
+        <button class="btn btn-primary my-2" routerLink="/tutores">Regresar</button>
+        <br />
+        <form>
+            <div class="form-group">
+                <label for="identificacion">Identificación</label>
+                <input id="identificacion" class="form-control" type="text" name="identificacion"
+                    [(ngModel)]="tutores.identificacionTutor">
+                <div class="alert alert-danger" *ngIf="error && error.identificacionTutor">
+                    {{error.identificacionTutor}}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="tutores.nombreTutor">
-            <div class="alert alert-danger" *ngIf="error && error.nombreTutor">
-                {{error.nombreTutor}}
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-control" type="text" name="nombre" [(ngModel)]="tutores.nombreTutor">
+                <div class="alert alert-danger" *ngIf="error && error.nombreTutor">
+                    {{error.nombreTutor}}
+                </div>
             </div>
-        </div>
-        <div style="margin-bottom: 32px;" class="form-group">
-            <label for="codigo">Codigo</label>
-            <input id="codigo" class="form-control" type="text" name="codigo" [(ngModel)]="tutores.codigoTutor">
-            <div class="alert alert-danger" *ngIf="error && error.codigoTutor">
-                {{error.codigoTutor}}
+            <div style="margin-bottom: 32px;" class="form-group">
+                <label for="codigo">Codigo</label>
+                <input id="codigo" class="form-control" type="text" name="codigo" [(ngModel)]="tutores.codigoTutor">
+                <div class="alert alert-danger" *ngIf="error && error.codigoTutor">
+                    {{error.codigoTutor}}
+                </div>
             </div>
-        </div>
-        <div>
-            <button type="button" class="btn btn-primary" (click)="tutores.id ? modificar() : crear()">
-                {{tutores.id ? 'Modificar Tutor' : 'Crear Tutor'}}
-            </button>
-        </div>
-    </form>
-</div>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="tutores.id ? modificar() : crear()">
+                    {{tutores.id ? 'Modificar Tutor' : 'Crear Tutor'}}
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./participantes.component.css'],
 })
 export class ParticipantesComponent implements OnInit {
-  titulo: string = 'Listado Participantes';
+  titulo: string = 'Listado Empleados';
   lista: Participante[] = [];
   faEdit = faPencil;
   faDelete = faTrash;

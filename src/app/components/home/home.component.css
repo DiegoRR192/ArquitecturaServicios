@@ -1,0 +1,42 @@
+.logo {
+  width: 400px;
+  margin-bottom: 60px;
+}
+
+.container-logo {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  padding: 40px 80px;
+}
+
+.text-home {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.members {
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+}
+
+.content-members {
+  display: grid;
+  justify-items: center;
+}
+
+.title-members {
+  margin-bottom: 40px;
+}
+
+.container-funcs {
+  display: flex;
+}
+
+.link-funcs {
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+}

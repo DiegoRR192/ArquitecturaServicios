@@ -1,34 +1,38 @@
-<h2>{{titulo}}</h2>
-<button class="btn btn-primary my-2" routerLink="/tutores/form">Agregar</button>
-<table class="table table-hover table-striper">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Identificación</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let tutor of lista">
-            <td>{{tutor.id}}</td>
-            <td>{{tutor.codigoTutor}}</td>
-            <td>{{tutor.nombreTutor}}</td>
-            <td>{{tutor.identificacionTutor}}</td>
-            <td>
-                <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
-                    [routerLink]="['/tutores/form', tutor.id]">
-                    <fa-icon [icon]="faEdit"></fa-icon>
-                </button>
-                <button class="btn btn-secondary btn-sm" (click)="eliminar(tutor)">
-                    <fa-icon [icon]="faDelete"></fa-icon>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
-    [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
-    class="float-left mx-2"
-</mat-paginator>
+<app-navbar></app-navbar>
+<section class="container body-content">
+    <h2>{{titulo}}</h2>
+    <button class="btn btn-primary my-2" routerLink="/tutores/form">Agregar</button>
+    <table class="table table-hover table-striper">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Identificación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tutor of lista">
+                <td>{{tutor.id}}</td>
+                <td>{{tutor.codigoTutor}}</td>
+                <td>{{tutor.nombreTutor}}</td>
+                <td>{{tutor.identificacionTutor}}</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
+                        [routerLink]="['/tutores/form', tutor.id]">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" (click)="eliminar(tutor)">
+                        <fa-icon [icon]="faDelete"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
+        [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
+        class="float-left mx-2"
+    </mat-paginator>
+</section>
+<app-footer></app-footer>

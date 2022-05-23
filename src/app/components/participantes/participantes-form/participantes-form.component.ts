@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./participantes-form.component.css'],
 })
 export class ParticipantesFormComponent implements OnInit {
-  titulo: string = 'Formulario Participantes';
+  titulo: string = 'Formulario Empleados';
   participantes: Participante = new Participante();
   error: any;
   empresas: Empresa[] = [];
@@ -38,7 +38,7 @@ export class ParticipantesFormComponent implements OnInit {
           'Crear Participantes',
           `Participantes ${tutores.nombre} fue creado con éxito...`
         );
-        this.router.navigate(['/participantes']);
+        this.router.navigate(['/empleados']);
       },
       (err: { status: number; error: any }) => {
         if (err.status === 400) {
@@ -73,7 +73,7 @@ export class ParticipantesFormComponent implements OnInit {
           'Modificar Participante',
           `Participante ${participantes.nombre} fue modificado con éxito...`
         );
-        this.router.navigate(['/participantes']);
+        this.router.navigate(['/empleados']);
       },
       (err: { status: number; error: any }) => {
         if (err.status === 400) {

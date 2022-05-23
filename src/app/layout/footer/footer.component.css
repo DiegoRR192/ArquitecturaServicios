@@ -1,0 +1,12 @@
+.container-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.li-link {
+  margin-bottom: 12px;
+}

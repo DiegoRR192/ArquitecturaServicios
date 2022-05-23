@@ -1,37 +1,41 @@
-<h2>{{titulo}}</h2>
-<button class="btn btn-primary my-2" routerLink="/participantes/form">Agregar</button>
-<table class="table table-hover table-striper">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Código</th>
-            <th>Telefono</th>
-            <th>Estado</th>
-            <th>Empresa</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let participante of lista">
-            <td>{{participante.id}}</td>
-            <td>{{participante.nombre}}</td>
-            <td>{{participante.codigoParticipante}}</td>
-            <td>{{participante.telefono}}</td>
-            <td>{{participante.estado}}</td>
-            <td>{{participante.empresa.nombreEmpresa}}</td>
-            <td>
-                <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
-                    [routerLink]="['/participantes/form', participante.id]">
-                    <fa-icon [icon]="faEdit"></fa-icon>
-                </button>
-                <button class="btn btn-secondary btn-sm" (click)="eliminar(participante)">
-                    <fa-icon [icon]="faDelete"></fa-icon>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
-    [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
-    class="float-left mx-2"
-</mat-paginator>
+<app-navbar></app-navbar>
+<section class="container body-content">
+    <h2>{{titulo}}</h2>
+    <button class="btn btn-primary my-2" routerLink="/empleados/form">Agregar</button>
+    <table class="table table-hover table-striper">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Código</th>
+                <th>Telefono</th>
+                <th>Estado</th>
+                <th>Empresa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let participante of lista">
+                <td>{{participante.id}}</td>
+                <td>{{participante.nombre}}</td>
+                <td>{{participante.codigoParticipante}}</td>
+                <td>{{participante.telefono}}</td>
+                <td>{{participante.estado}}</td>
+                <td>{{participante.empresa.nombreEmpresa}}</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
+                        [routerLink]="['/empleados/form', participante.id]">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" (click)="eliminar(participante)">
+                        <fa-icon [icon]="faDelete"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
+        [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
+        class="float-left mx-2"
+    </mat-paginator>
+</section>
+<app-footer></app-footer>
