@@ -33,7 +33,7 @@ export class ParticipantesComponent implements OnInit {
           this.calcularRangos();
           Swal.fire(
             'Eliminar Participante',
-            `Fue ${participante.nombre} eliminado  con éxito..`
+            `Fue eliminado ${participante.nombre} con éxito..`
           );
         },
         () => {

@@ -1,0 +1,42 @@
+<h2>{{titulo}}</h2>
+<button class="btn btn-primary my-2" routerLink="/grupos/form">Agregar</button>
+<table class="table table-hover table-striper">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Tutor</th>
+            <th>Empresa</th>
+            <th>Curso</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grupo of lista">
+            <td>{{grupo.id}}</td>
+            <td>{{grupo.nombreGrupo}}</td>
+            <td>{{grupo.estado}}</td>
+            <td>{{grupo.fechaInicio}}</td>
+            <td>{{grupo.fechaFin}}</td>
+            <td>{{grupo.tutor.nombreTutor}}</td>
+            <td>{{grupo.empresa.nombreEmpresa}}</td>
+            <td>{{grupo.curso.nombre}}</td>
+            <td>
+                <button class="btn btn-secondary btn-sm" style="margin-right: 12px;"
+                    [routerLink]="['/grupos/form', grupo.id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button class="btn btn-secondary btn-sm" (click)="eliminar(grupo)">
+                    <fa-icon [icon]="faDelete"></fa-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<mat-paginator [length]="totalRegistros" [pageIndex]="paginaActual" [pageSize]="totalPagina"
+    [pageSizeOptions]="pageSizeOption" aria-label="Select page" (page)="paginar($event)"> showFirstLastButtons
+    class="float-left mx-2"
+</mat-paginator>

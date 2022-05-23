@@ -20,6 +20,8 @@ import { ParticipantesComponent } from './components/participantes/participantes
 import { ParticipantesFormComponent } from './components/participantes/participantes-form/participantes-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
+import { GruposComponent } from './components/grupos/grupos.component';
+import { GruposFormComponent } from './components/grupos/grupos-form/grupos-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { LoginComponent } from './components/login/login.component';
     ParticipantesComponent,
     ParticipantesFormComponent,
     LoginComponent,
+    GruposComponent,
+    GruposFormComponent,
   ],
   imports: [
     BrowserModule,

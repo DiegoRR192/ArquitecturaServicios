@@ -4,6 +4,8 @@ import { CursosFormComponent } from './components/cursos/cursos-form/cursos-form
 import { CursosComponent } from './components/cursos/cursos.component';
 import { EmpresasFormComponent } from './components/empresas/empresas-form/empresas-form.component';
 import { EmpresasComponent } from './components/empresas/empresas.component';
+import { GruposFormComponent } from './components/grupos/grupos-form/grupos-form.component';
+import { GruposComponent } from './components/grupos/grupos.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ParticipantesFormComponent } from './components/participantes/participantes-form/participantes-form.component';
@@ -27,6 +29,9 @@ const routes: Routes = [
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/form', component: CursosFormComponent },
   { path: 'cursos/form/:id', component: CursosFormComponent },
+  { path: 'grupos', component: GruposComponent },
+  { path: 'grupos/form', component: GruposFormComponent },
+  { path: 'grupos/form/:id', component: GruposFormComponent },
 ];
 
 @NgModule({

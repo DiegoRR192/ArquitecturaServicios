@@ -13,15 +13,17 @@ export class EmpresasFormComponent implements OnInit {
   titulo: string = 'Formulario Empresas';
   empresas: Empresa = new Empresa();
   error: any;
+  totalParticipantes: number = 0
 
   constructor(
     private service: EmpresaService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.editar();
+    this.empresas.participantes ? this.totalParticipantes = this.empresas.participantes.length : 0
   }
 
   crear() {
